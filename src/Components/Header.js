@@ -1,37 +1,44 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import "../styles/header.scss";
 import "../styles/index.scss";
-import {
-  StyledHeader,
-  HeaderMenuNav,
-  HeaderMenuItem,
-  PlanetIcon,
-  PlanetNameMobile,
-  MenuArrow,
-} from "./styles/Header.styled";
+import { StyledHeader, StyledHeaderMenu } from "./styles/Header.styled";
+import BurgerMenuBtn from "./BurgerMenuBtn";
 
 const Header = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
-    <header>
+    <StyledHeader>
       <nav>
         <h2>THE PLANETS</h2>
-        <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+        <BurgerMenuBtn
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+          showToggle={showMobileMenu}
+          // display={showToggle ? "block" : "none"}
+          // onToggle={onToggle}
+        >
+          {/* <img src="./assets/icon-hamburger.svg" alt="hamburger menu"></img> */}
+        </BurgerMenuBtn>
       </nav>
-      <section>
-        <StyledHeader>
-          <HeaderMenuNav>
-            <ul>
-              <HeaderMenuItem>
-                <PlanetIcon />
-                <PlanetNameMobile />
-                <MenuArrow />
-              </HeaderMenuItem>
-            </ul>
-          </HeaderMenuNav>
-        </StyledHeader>
-        <div className="header__menu hide-for-desktop">
+      {showMobileMenu && (
+        <section>
+          <StyledHeaderMenu>
+            <nav>
+              <ul>
+                <li className="header__menu-item">
+                  <div className="planet-icon"></div>
+                  <a
+                    href="/"
+                    className="planet-name mobile"
+                    id="planet-mercury"
+                  >
+                    Mercury
+                  </a>
+                  <div className="menu-arrow"></div>
+                </li>
+              </ul>
+            </nav>
+          </StyledHeaderMenu>
+          {/* <div className="header__menu hide-for-desktop">
           <div className="header__menu-nav">
             <ul>
               <li className="header__menu-item" onClick="planetHandler(0)">
@@ -99,8 +106,8 @@ const Header = () => {
               </li>
             </ul>
           </div>
-        </div>
-        {/* <div className="header__links hide-for-mobile">
+        </div> */}
+          {/* <div className="header__links hide-for-mobile">
           <ul className="header__links-list">
             <li>
               <a
@@ -176,8 +183,9 @@ const Header = () => {
             </li>
           </ul>
         </div> */}
-      </section>
-    </header>
+        </section>
+      )}
+    </StyledHeader>
   );
 };
 
