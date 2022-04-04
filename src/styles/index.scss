@@ -8,7 +8,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
+  font-family: "Antonio", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
   position: relative;
@@ -26,10 +26,11 @@ ul,
 li,
 input,
 ::placeholder {
-  font-family: "Rubik", sans-serif;
+  font-family: "Antonio", sans-serif;
   font-weight: 500;
 }
 
+div,
 p,
 span,
 button {
@@ -60,3 +61,20 @@ button {
   border: 0;
   background: none;
 }
+
+body {
+  padding: 2rem;
+}
+
+$white: hsl(0, 0, 100%);
+$backgroundColor: hsl(240, 67%, 8%);
+$blueGrey: hsl(240, 17%, 26%);
+$grey: hsl(240, 6%, 54%);
+$lightBlue: hsl(194, 48%, 49%);
+$darkYellow: hsl(33, 82%, 61%);
+$purple: hsl(263, 67%, 51%);
+$lightRed: hsl(10, 63%, 51%);
+$red: hsl(2, 68%, 53%);
+$orange: hsl(20, 7%, 17%);
+$lightGreen: hsl(169, 73%, 44%);
+$blue: hsl(222, 87%, 56%);

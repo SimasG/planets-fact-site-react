@@ -1,11 +1,21 @@
+import { ThemeProvider } from "styled-components";
 import "./styles/App.scss";
-import Header from "./Components/Header";
+import Header from "./components/Header";
+import GlobalStyles from "./components/styles/Global";
+
+const theme = {
+  mobile: "768px",
+  tablet: "1200px",
+};
 
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <GlobalStyles />
+        <Header />
+      </div>
+    </ThemeProvider>
   );
 }
 
