@@ -1,22 +1,25 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.header`
+export const StyledHeaderMobile = styled.header`
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h2 {
-      font-size: 2.8rem;
-      color: #fff;
-      z-index: 100;
-    }
-    .burger-btn {
-      z-index: 100;
+    @media (min-width: ${({ theme }) => theme.mobile}) {
+      display: none;
+      .header__logo {
+        font-size: 2.8rem;
+        color: #fff;
+        z-index: 100;
+      }
+      .burger-btn {
+        z-index: 100;
+      }
     }
   }
 `;
 
-export const StyledHeaderMenu = styled.section`
+export const StyledHeaderMenuMobile = styled.section`
   position: fixed;
   top: 0;
   left: 0;
@@ -29,13 +32,13 @@ export const StyledHeaderMenu = styled.section`
     position: fixed;
     width: 100%;
     padding: 0 2.4rem 6.7rem 2.4rem;
-    /* top: 11.3rem; */
     margin-top: 11.3rem;
     height: 100px;
   }
 
   ul {
     width: 100%;
+    /* No clue why I need to put margin-top here */
     margin-top: 45rem;
     .header__menu-item {
       display: grid;
@@ -85,54 +88,34 @@ export const StyledHeaderMenu = styled.section`
   }
 `;
 
-//     .header__menu {
-//       .header__menu-nav {
-//         .header__menu-item {
-//           .planet-icon {
-//           }
-//           #mercury {
-//             background: #def4fc;
-//           }
-//           #venus {
-//             background: #f7cc7f;
-//           }
-//           #earth {
-//             background: #545bfe;
-//           }
-//           #mars {
-//             background: #ff6a45;
-//           }
-//           #jupiter {
-//             background: #ecad7a;
-//           }
-//           #saturn {
-//             background: #fccb6b;
-//           }
-//           #uranus {
-//             background: #65f0d5;
-//           }
-//           #neptune {
-//             background: #497efa;
-//           }
-//           .planet-name.mobile {
-//           }
-//           .menu-arrow {
-//           }
-//         }
-//         .header__menu-item:first-child {
-//           padding-top: 0;
-//         }
-//         .header__menu-item:last-child {
-//           padding-bottom: 0;
-//         }
-//         .header__hr {
-//           width: 100%;
-//           height: 1px;
-//           background: #979797;
-//           opacity: 0.3;
-//         }
-//       }
-//     }
-//     .header__menu.active {
-//       display: block;
-//     }
+export const StyledHeaderMenuDesktop = styled.section`
+  padding: 4rem 4rem 0 4rem;
+  display: inline;
+  display: none;
+  .header__links-list {
+    display: flex;
+    justify-content: space-between;
+    ul {
+      li {
+        .planet-name {
+          position: relative;
+          font-family: "Spartan", sans-serif;
+          font-size: 1.1rem;
+          line-height: 2.5rem;
+          letter-spacing: 0.1rem;
+          text-transform: uppercase;
+          font-weight: 700;
+          opacity: 0.6;
+          &:hover {
+            opacity: 1;
+            transition: opacity ease-in-out 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.mobile}) {
+    display: block;
+  }
+`;

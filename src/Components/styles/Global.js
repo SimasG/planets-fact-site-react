@@ -7,83 +7,76 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: none;
+  background: transparent;
 }
-
-/* $white: hsl(0, 0, 100%);
-$backgroundColor: hsl(240, 67%, 8%);
-$blueGrey: hsl(240, 17%, 26%);
-$grey: hsl(240, 6%, 54%);
-$lightBlue: hsl(194, 48%, 49%);
-$darkYellow: hsl(33, 82%, 61%);
-$purple: hsl(263, 67%, 51%);
-$lightRed: hsl(10, 63%, 51%);
-$red: hsl(2, 68%, 53%);
-$orange: hsl(20, 7%, 17%);
-$lightGreen: hsl(169, 73%, 44%);
-$blue: hsl(222, 87%, 56%); */
 
 html {
+    font-size: 62.5%;
     font-family: 'Antonio', sans-serif;
-        font-family: 'Spartan', sans-serif;
-        background-color: lightblue;
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  position: relative;
-}
-
-// COLORS
-// Primary
-h1,
-h2,
-h3,
-p,
-a,
-button,
-ul,
-li,
-input,
-::placeholder {
-  font-family: "Antonio", sans-serif;
-  font-weight: 500;
-}
-
-div,
-p,
-span,
-button {
-  font-size: 1.6rem;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-input {
-  outline: none;
-}
-
-input,
-button {
-  cursor: pointer;
-}
-
-button {
-  border: 0;
-  background: none;
+    font-family: 'Spartan', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-image: url('../assets/background-stars.svg');
+    position: relative;
+    background-size: 300%;
+    background-repeat: repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    background-color: #070724;
 }
 
 body {
   padding: 2rem;
 }
 
+h1, h2, h3, h4, p, li, ul, span, a, button {
+    color: #fff;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 8rem;
+    line-height: 10.3rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 4rem;
+    line-height: 5.2rem;
+    letter-spacing: -0.15rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.26rem;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+}
+
+ul, li, button {
+    cursor: pointer;
+}
 `;
 
 export default GlobalStyles;
