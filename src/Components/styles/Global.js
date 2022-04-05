@@ -9,6 +9,19 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+/* $white: hsl(0, 0, 100%);
+$backgroundColor: hsl(240, 67%, 8%);
+$blueGrey: hsl(240, 17%, 26%);
+$grey: hsl(240, 6%, 54%);
+$lightBlue: hsl(194, 48%, 49%);
+$darkYellow: hsl(33, 82%, 61%);
+$purple: hsl(263, 67%, 51%);
+$lightRed: hsl(10, 63%, 51%);
+$red: hsl(2, 68%, 53%);
+$orange: hsl(20, 7%, 17%);
+$lightGreen: hsl(169, 73%, 44%);
+$blue: hsl(222, 87%, 56%); */
+
 html {
     font-family: 'Antonio', sans-serif;
         font-family: 'Spartan', sans-serif;
@@ -70,6 +83,7 @@ button {
 body {
   padding: 2rem;
 }
+
 `;
 
 export default GlobalStyles;
