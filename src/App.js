@@ -28,8 +28,6 @@ function App() {
     }
   }, [width]);
 
-  console.log(currentPlanetSize);
-
   return (
     <ThemeProvider theme={theme}>
       <div>

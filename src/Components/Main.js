@@ -8,6 +8,21 @@ const Main = ({
   setCurrentTab,
   currentPlanetSize,
 }) => {
+  const geologySize = {
+    small: {
+      width: "50px",
+      height: "58.28px",
+    },
+    medium: {
+      width: "80px",
+      height: "93.25px",
+    },
+    large: {
+      width: "163px",
+      height: "199px",
+    },
+  };
+
   return (
     <StyledMain
       currentPlanet={currentPlanet}
@@ -42,14 +57,39 @@ const Main = ({
 
           <div className="main__hero active" key={planetData[currentPlanet].id}>
             <div className="main__img">
-              <div
-                className="planet-img"
-                style={{
-                  background: `url(${planetData[currentPlanet].images.planet}) center center / ${planetData[currentPlanet].size[currentPlanetSize]} no-repeat`,
-                  height: `${planetData[currentPlanet].size[currentPlanetSize]}`,
-                  width: `${planetData[currentPlanet].size[currentPlanetSize]}`,
-                }}
-              ></div>
+              {currentTab === "overview" && (
+                <div
+                  className="planet-img"
+                  style={{
+                    background: `url(${planetData[currentPlanet].images.planet}) center center / ${planetData[currentPlanet].size[currentPlanetSize]} no-repeat`,
+                    height: `${planetData[currentPlanet].size[currentPlanetSize]}`,
+                    width: `${planetData[currentPlanet].size[currentPlanetSize]}`,
+                  }}
+                ></div>
+              )}
+              {currentTab === "structure" && (
+                <div
+                  className="planet-img"
+                  style={{
+                    background: `url(${planetData[currentPlanet].images.internal}) center center / ${planetData[currentPlanet].size[currentPlanetSize]} no-repeat`,
+                    height: `${planetData[currentPlanet].size[currentPlanetSize]}`,
+                    width: `${planetData[currentPlanet].size[currentPlanetSize]}`,
+                  }}
+                ></div>
+              )}
+              {currentTab === "geology" && (
+                <div
+                  className="planet-img"
+                  style={{
+                    backgroundImage: `url(${planetData[currentPlanet].images.geology}), url(${planetData[currentPlanet].images.planet})`,
+                    backgroundRepeat: `no-repeat`,
+                    backgroundPosition: `50% 100%, center`,
+                    backgroundSize: `${geologySize[currentPlanetSize].height}, ${planetData[currentPlanet].size[currentPlanetSize]}`,
+                    height: `${planetData[currentPlanet].size[currentPlanetSize]}`,
+                    width: `${planetData[currentPlanet].size[currentPlanetSize]}`,
+                  }}
+                ></div>
+              )}
             </div>
             <div className="main__text">
               <h1 className="main__text-heading">
@@ -137,7 +177,7 @@ const Main = ({
             </section>
           </div>
 
-          <div className="main__hero">
+          {/* <div className="main__hero">
             <div className="main__img">
               <div className="planet-img"></div>
             </div>
@@ -198,9 +238,9 @@ const Main = ({
                 <h4 className="main__item-info"></h4>
               </div>
             </section>
-          </div>
-
-          <div className="main__hero">
+          </div> */}
+          <div className="empty-div"></div>
+          {/* <div className="main__hero">
             <div className="main__img">
               <div className="planet-img"></div>
             </div>
@@ -261,7 +301,7 @@ const Main = ({
                 <h4 className="main__item-info"></h4>
               </div>
             </section>
-          </div>
+          </div> */}
         </div>
       )}
     </StyledMain>
