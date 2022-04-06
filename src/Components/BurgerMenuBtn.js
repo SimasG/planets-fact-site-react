@@ -1,9 +1,6 @@
-const BurgerMenuBtn = ({ onClick, showToggle }) => {
-  const toggleMenu = () => {};
-
+const BurgerMenuBtn = ({ onToggle }) => {
   return (
-    // <button style={{ display: display }} onToggle={onToggle}>
-    <button onClick={onClick} className="burger-btn">
+    <button onClick={onToggle} className="burger-btn">
       <img src="./assets/icon-hamburger.svg" alt="hamburger menu"></img>
     </button>
   );

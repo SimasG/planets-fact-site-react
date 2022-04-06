@@ -5,16 +5,16 @@ export const StyledHeaderMobile = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .header__logo {
+      font-size: 2.8rem;
+      color: #fff;
+      z-index: 100;
+    }
+    .burger-btn {
+      z-index: 100;
+    }
     @media (min-width: ${({ theme }) => theme.mobile}) {
       display: none;
-      .header__logo {
-        font-size: 2.8rem;
-        color: #fff;
-        z-index: 100;
-      }
-      .burger-btn {
-        z-index: 100;
-      }
     }
   }
 `;

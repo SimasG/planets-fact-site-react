@@ -75,6 +75,8 @@ p {
 }
 
 ul, li, button {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
     cursor: pointer;
 }
 `;
