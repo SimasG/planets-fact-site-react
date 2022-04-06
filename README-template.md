@@ -2,11 +2,14 @@ TODOS:
 
 1.  Display only the first planet (Mercury) by default -> DONE
 2.  Populate the data for one planet -> DONE
-3.  Populate the data for all planets -> WIP
+3.  Populate the data for all planets -> DONE
 4.  Add click handlers for each link -> DONE
-5.  Implement Overview/Surface/Structure functionality -> WIP
+5.  Implement Overview/Surface/Structure functionality -> DONE
 6.  Implement different planet dimensions -> DONE
-7.  Make everything mobile-friendly
+7.  Make everything mobile-friendly -> DONE
+8.  Small details
+    - When clicking a different planet, the currentTab should be reset to "overview" -> DONE
+    - Change planet colors for the mobile menu -> DONE
 
 VIEWPORT SIZE -> DONE
 
@@ -19,14 +22,3 @@ TABS
 - If currentTab = "overview" => images.overview
 - If currentTab = "structure" => images.internal
 - If currentTab = "surface" => images.geology
-
-                  background: `${
-                    currentTab === "overview" &&
-                    `url(${planetData[currentPlanet].images.planet}) center center / ${planetData[currentPlanet].size[currentPlanetSize]} no-repeat`
-                  } ${
-                    currentTab === "structure" &&
-                    `url(${planetData[currentPlanet].images.internal}) center center / ${planetData[currentPlanet].size[currentPlanetSize]} no-repeat`
-                  } ${
-                    currentTab === "geology" &&
-                    `url(${planetData[currentPlanet].images.geology}) center center / ${planetData[currentPlanet].size[currentPlanetSize]} no-repeat`
-                  }`,

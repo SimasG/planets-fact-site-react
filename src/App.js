@@ -4,10 +4,10 @@ import GlobalStyles from "./components/styles/Global";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
+// Forgot where the theme comes in lol
 const theme = {
   mobile: "768px",
   tablet: "1250px",
-  randomColor: "#fe9912",
 };
 
 function App() {
@@ -35,8 +35,10 @@ function App() {
         <Header
           onToggle={() => setShowMobileMenu(!showMobileMenu)}
           showMobileMenu={showMobileMenu}
+          setShowMobileMenu={setShowMobileMenu}
           currentPlanet={currentPlanet}
           setCurrentPlanet={setCurrentPlanet}
+          setCurrentTab={setCurrentTab}
         />
         <Main
           showMobileMenu={showMobileMenu}

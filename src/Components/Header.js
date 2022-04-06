@@ -7,7 +7,13 @@ import BurgerMenuBtn from "./BurgerMenuBtn";
 import MobileMenuItem from "./MobileMenuItem";
 import planetData from "../data.json";
 
-const Header = ({ onToggle, showMobileMenu, showPlanet, setCurrentPlanet }) => {
+const Header = ({
+  onToggle,
+  showMobileMenu,
+  setShowMobileMenu,
+  setCurrentPlanet,
+  setCurrentTab,
+}) => {
   return (
     <StyledHeaderMobile>
       <nav>
@@ -19,7 +25,10 @@ const Header = ({ onToggle, showMobileMenu, showPlanet, setCurrentPlanet }) => {
           {planetData.map((planet) => (
             <li key={planet.id}>
               <button
-                onClick={() => setCurrentPlanet(planet.id - 1)}
+                onClick={() => {
+                  setCurrentPlanet(planet.id - 1);
+                  setCurrentTab("overview");
+                }}
                 className="planet-name"
               >
                 {planet.name.toUpperCase()}
@@ -33,7 +42,14 @@ const Header = ({ onToggle, showMobileMenu, showPlanet, setCurrentPlanet }) => {
           <nav>
             <ul>
               {planetData.map((planet) => (
-                <MobileMenuItem key={planet.id} planet={planet} />
+                <MobileMenuItem
+                  key={planet.id}
+                  planet={planet}
+                  showMobileMenu={showMobileMenu}
+                  setShowMobileMenu={setShowMobileMenu}
+                  setCurrentPlanet={setCurrentPlanet}
+                  setCurrentTab={setCurrentTab}
+                />
               ))}
             </ul>
           </nav>
